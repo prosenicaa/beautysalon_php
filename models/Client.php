@@ -42,14 +42,14 @@ class Client
     }
 
 
-    public function deleteById(mysqli $conn)
+    public static function deleteById($clientId, mysqli $conn)
     {
-        $query = "DELETE FROM client WHERE id=$this->id";
+        $query = "DELETE FROM client WHERE id=$clientId";
         return $conn->query($query);
     }
 
 
-    public function update($id, mysqli $conn)
+    public static function update($id, mysqli $conn)
     {
         $query = "UPDATE client set fullname = '$this->fullname',date = '$this->date'
         ,service = '$this->service' WHERE id='$id'";
@@ -61,5 +61,11 @@ class Client
     {
         $query = "INSERT INTO client(fullname, date, service,userid) VALUES('$client->fullname','$client->date','$client->service','$client->userid')";
         return $conn->query($query);
+    }
+
+    public static function getLast(mysqli $conn)
+    {
+        $q = "SELECT * FROM client ORDER BY id DESC LIMIT 1";
+        return $conn->query($q);
     }
 }

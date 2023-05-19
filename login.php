@@ -22,7 +22,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     if ($result->num_rows == 1) {
         session_start();
-        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_id'] = $result->fetch_assoc()['id'];
         header("Location: main.php");
         exit();
     } else {

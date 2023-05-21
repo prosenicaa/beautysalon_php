@@ -35,23 +35,23 @@ $(document).ready(function () {
   }
 
   showdata();
-  //Ajax for INSERT data
+  //ajax for INSERT data
   $("#btnadd").click(function (e) {
     e.preventDefault();
     console.log("Save Button clicked");
+    let aid = $("#apid").val();
     let fn = $("#fullnameid").val();
     let dt = $("#dateid").val();
     let sr = $("#serviceid").val();
     // console.log(fn);
     // console.log(dt);
     // console.log(sr);
-    // mydata = { fullname: fn, date: dt, service: sr };
-    // console.log(mydata);
 
     $.ajax({
       url: "handler/add.php",
       method: "POST",
       data: {
+        idsend: aid,
         fullnameSend: fn,
         dateSend: dt,
         serviceSend: sr,
@@ -89,10 +89,36 @@ $(document).ready(function () {
             "<div class='alert alert-dark mt-3'>Unable to delete client!</div>";
         }
         $("#msg").html(msg);
-        // showdata();
       },
     });
   });
 
-  //Edit
+  //ajax for UPDATE data
+
+  $("tbody").on("click", ".btn-edit", function () {
+    console.log("Edit button clicked!");
+    const editid = $(this).data("sid");
+    console.log(editid);
+    $.ajax({
+      url: "handler/update.php",
+      method: "POST",
+      data: {
+        editsend: editid,
+      },
+      success: function (data) {
+        // console.log(data);
+        const jsonData = JSON.parse(data);
+
+        const id = jsonData[0].id;
+        const fullname = jsonData[0].fullname;
+        const date = jsonData[0].date;
+        const service = jsonData[0].service;
+
+        $("#apid").val(id);
+        $("#fullnameid").val(fullname);
+        $("#dateid").val(date);
+        $("#serviceid").val(service);
+      },
+    });
+  });
 });

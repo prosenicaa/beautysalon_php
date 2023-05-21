@@ -49,10 +49,10 @@ class Client
     }
 
 
-    public static function update($id, mysqli $conn)
+    public static function update($id, $fullname, $date, $service, mysqli $conn)
     {
-        $query = "UPDATE client set fullname = '$this->fullname',date = '$this->date'
-        ,service = '$this->service' WHERE id='$id'";
+        $query = "UPDATE client set fullname = '$fullname',date = '$date'
+        ,service = '$service' WHERE id='$id'";
         return $conn->query($query);
     }
 

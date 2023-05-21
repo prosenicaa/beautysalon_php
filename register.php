@@ -69,7 +69,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
             <div class="input_box">
                 <input type="password" class="password" name="password" value="<?php echo $_POST['password']; ?>" required>
                 <label>Password</label>
-                <div class="password_checkbox"><input type="checkbox"><p>Show Password</p></div>
+                <div class="password_checkbox"><input type="checkbox" onclick="showPassword()"><p>Show Password</p></div>
             </div>
             <div class="input_box">
                 <input type="text" class="email" name="email" value="<?php echo $email; ?>" required>
@@ -86,6 +86,21 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     <?php
     include 'templates/footer.php';
     ?>
+
+<script>
+
+function showPassword() {
+  var passwordInput = document.querySelector('.password');
+  var showPasswordCheckbox = document.querySelector('.password_checkbox input');
+
+  if (showPasswordCheckbox.checked) {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+}
+
+</script>
 
 
 </body>

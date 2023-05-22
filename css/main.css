@@ -1,0 +1,57 @@
+#btnadd.btn.btn-primary{
+    background-color: pink;
+    border: 2px solid rgb(255, 168, 194);
+    color: rgb(51, 34, 37);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 20px;
+    display: inline-block;
+    height: 65px;
+    width: 100px;
+    cursor: pointer;
+}
+#btnadd.btn.btn-primary:hover{
+    background-color: rgb(255, 168, 194);
+}
+.row input{
+    width: 100%;
+    font-size: 25px;
+    margin: 3px 0px;
+    outline: none;
+    border-color: rgb(255, 110, 110);
+    background-color: rgb(254, 219, 225);
+}
+.row label{
+    height: 30px;
+    font-size: 26px;
+    color: #0000009e;
+}
+h3{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.table thead{
+    background-color: rgb(254, 219, 225);
+}
+.table tbody{
+    background-color: rgb(220, 239, 220);
+}
+button.btn.btn-danger.btn-sm.btn-del{
+    background-color: rgb(255, 76, 106);
+}
+button.btn.btn-warning.btn-sm.btn-edit{
+    background-color: rgb(250, 177, 189)
+}
+.text-center #myInput {
+    width: 100%;
+    font-size: 25px;
+    margin: 3px 0px;
+    outline: none;
+    border-color: rgb(255, 110, 110);
+    background-color: #ff939e;
+}

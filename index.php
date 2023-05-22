@@ -20,7 +20,7 @@ session_start();
                 <p>Our goal is that every client receives an outstanding service from the time they walk in, to the time they walk out.<br> We want our clients to love us so much that they would refer us their friends, their family, and even complete strangers who approach them at the grocery store. We aim to create Salon Angela enthusiasts.</p>
                 <div class="btn">
                     <button type="button">Learn more</button>
-                    <button type="button" class="primary-btn">Make an appointment</button>
+                    <a href="main.php" class="primary-btn">Make an appointment</a>
                 </div>
             </div>
                 <div class="right-column">

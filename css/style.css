@@ -83,7 +83,19 @@ span{
     color: #fb7381;
     background: transparent;
 }
-.btn .primary-btn{
+.btn a {
+    padding: 7px 30px;
+    margin-right: 15px;
+    outline: none;
+    border: 1px solid #fb7381;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fb7381;
+    background: transparent;
+    text-decoration: none;
+}
+
+.btn .primary-btn {
     background: linear-gradient(#fb7381, #f14a60);
     box-shadow: 0 2px 15px rgba(248, 38, 103, 0.26);
     color: #fff;

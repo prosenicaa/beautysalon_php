@@ -66,7 +66,7 @@ if (!isset($_SESSION['user_id'])) {
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Full name</th>
+                            <th scope="col"><button class="btn" onclick="sort()"><img src="img/arrowup1.png" style="width: 25px;height: 25px;"></button>Full name</th>
                             <th scope="col">Date</th>
                             <th scope="col">Service</th>
                             <th scope="col">Action</th>
@@ -105,6 +105,32 @@ if (!isset($_SESSION['user_id'])) {
     tr[i].style.display = found ? "" : "none";
   }
 }
+
+
+function sort() {
+            var table, tableRows, change, i, el1, el2, rotate;
+            table = document.getElementById("tbody");
+            change = true;
+
+            while (change) {
+                change = false;
+                tableRows = table.rows;
+                for (i = 1; i < (tableRows.length - 1); i++) {
+                    rotate = false;
+                    el1 = tableRows[i].getElementsByTagName("td")[1];
+                    el2 = tableRows[i + 1].getElementsByTagName("td")[1];
+                    if (el1.innerHTML.toLowerCase() > el2.innerHTML.toLowerCase()) {
+                        rotate = true;
+                        break;
+                    }
+                }
+                if (rotate) {
+                    tableRows[i].parentNode.insertBefore(tableRows[i + 1], tableRows[i]);
+                    change = true;
+                }
+            }
+        }
+
 
 
 </script>
